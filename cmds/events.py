@@ -9,6 +9,7 @@ class event(Cog_Extension):
     if message.author == self.bot.user:
       return
     if self.bot.user.mention in message.content:
+      await message.channel.typing()
       await message.reply(calling_Oriana(message.content,message.channel.id))
   @commands.Cog.listener()
   async def on_member_join(self,member:discord.Member):

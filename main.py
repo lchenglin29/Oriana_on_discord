@@ -3,8 +3,11 @@ from discord.ext import commands
 from discord import app_commands
 import os,asyncio,datetime,aiohttp
 import keep_alive
+from dotenv import load_dotenv
 
-bot_token = os.environ['TOKEN']
+load_dotenv()
+
+bot_token = os.environ['OR_TOKEN']
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='a!', intents = intents)
@@ -62,5 +65,5 @@ async def main():
         await bot.start(bot_token)
 
 if __name__ == "__main__":
-    keep_alive.keep_alive()
+#    keep_alive.keep_alive()
     asyncio.run(main())
